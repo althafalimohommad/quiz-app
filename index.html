@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Knowledge Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <canvas id="backgroundCanvas"></canvas>
+    
+    <!-- Login Screen -->
+    <div id="loginScreen" class="screen active">
+        <div class="frosted-panel login-panel">
+            <h1>Universal Knowledge Quiz</h1>
+            <p>Log in, compete with friends, and conquer the daily trivia with only five hints!</p>
+            <div class="input-group">
+                <label for="username">Enter your username:</label>
+                <input type="text" id="username" placeholder="Username" maxlength="20">
+            </div>
+            <button id="loginBtn" class="primary-btn">Start Quiz</button>
+            <p id="loginStatus" class="status-message"></p>
+        </div>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quizScreen" class="screen">
+        <!-- Header -->
+        <div class="frosted-panel header-panel">
+            <h1>Daily Quiz Challenge</h1>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-label">Profile</div>
+                    <div id="profileName" class="stat-value">Guest</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Score</div>
+                    <div id="profileScore" class="stat-value">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Hints left today</div>
+                    <div id="profileHints" class="stat-value">5</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="content-wrapper">
+            <!-- Question Panel -->
+            <div class="frosted-panel question-panel">
+                <div class="panel-title">Question</div>
+                <div id="questionText" class="question-text">[Category] Question appears here</div>
+                
+                <div class="options-container" id="optionsContainer">
+                    <!-- Options will be dynamically added -->
+                </div>
+                
+                <div id="hintText" class="hint-text">Hints appear here</div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Leaderboard -->
+                <div class="frosted-panel sidebar-panel">
+                    <div class="panel-title">Leaderboard</div>
+                    <ul id="leaderboardList" class="list-container"></ul>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="frosted-panel sidebar-panel">
+                    <div class="panel-title">Recent Activity</div>
+                    <ul id="historyList" class="list-container"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Controls -->
+        <div class="frosted-panel footer-panel">
+            <div class="button-group">
+                <button id="submitBtn" class="action-btn submit-btn">Submit Answer</button>
+                <button id="nextBtn" class="action-btn next-btn">Next Question</button>
+                <button id="hintBtn" class="action-btn hint-btn">Use Hint</button>
+                <button id="saveBtn" class="action-btn save-btn">Save Progress</button>
+            </div>
+            <div id="feedbackText" class="feedback-text"> </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
